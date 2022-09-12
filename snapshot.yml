@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+  - name: snapshot for ebs_volume
+    ec2_snapshot:
+      aws_access_key: *******************
+      aws_secret_key: *********************
+      region: us-east-1
+      volume_id: vol-064130428e6b36aee
+      description: snapshot of ebs volume for ansible playbook

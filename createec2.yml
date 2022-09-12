@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks:
+   - name: launching ec2 instance using Ansible
+     ec2:
+      key_name: instancekeypair
+      instance_type: t2.micro
+      image: ami-05fa00d4c63e32376
+      region: us-east-1
+      wait: yes
+      # group: Ansible
+      count: 1
+      vpc_subnet_id: subnet-0d7be86dfa038a212
+      assign_public_ip: yes
+      aws_access_key: **************
+      aws_secret_key: ******************
