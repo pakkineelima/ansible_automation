@@ -1,10 +1,16 @@
 ---
 - hosts: localhost
+  connection: local
+  vars:
+    # - ansible_python_interpreter: python2
   tasks:
+    -name: boto
+     pip:
+       name: boto
   - name: snapshot for ebs_volume
     ec2_snapshot:
       aws_access_key: *******************
       aws_secret_key: *********************
       region: us-east-1
-      volume_id: vol-064130428e6b36aee
+      volume_id: vol-0ffcdcb94ef28a5c8
       description: snapshot of ebs volume for ansible playbook
